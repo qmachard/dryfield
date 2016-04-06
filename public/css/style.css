@@ -1,0 +1,21 @@
+.farms {
+	display:block;
+}
+
+.farm {
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	height: 100px;
+	margin: 10px;
+}
+
+.farm_actions {
+	margin-bottom: 10px;
+}
+
+.farm_inner {
+	padding: 20px;
+	text-align: center;
+	font-size: 20px;
+}

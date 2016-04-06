@@ -3,8 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="./components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-	<script src="js/main.js"></script>
+	<div class="container">
+		<header>
+			<nav>
+				<ul>
+					<li><a href="#">Game</a></li>
+					<li><a href="#">Score</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section id="sectionScore">
+			<ul>
+				<li><span id="nbHarvest"></span> récoltes</li>
+				<li><span id="nbLiters"></span> L</li>
+				<li><span id="nbDollars"></span> $</li>
+			</ul>
+		</section>
+		<section class="farms" id="sectionGame">
+			<div class="farm">
+				<div class="farm_actions">
+					<button class="btn btn-default">Irrigate</button>
+					<button class="btn btn-success" disabled>Harvest</button>
+				</div>
+				<div class="farm_inner bg-success"><span class="farm_harvest"></span> L</div>
+			</div>
+			<div class="farm">
+				<div class="farm_actions">
+					<button class="btn btn-default">Irrigate</button>
+					<button class="btn btn-success" disabled>Harvest</button>
+				</div>
+				<div class="farm_inner bg-success"><span class="farm_harvest"></span> L</div>
+			</div>
+			<div class="farm">
+				<div class="farm_actions">
+					<button class="btn btn-default">Irrigate</button>
+					<button class="btn btn-success" disabled>Harvest</button>
+				</div>
+				<div class="farm_inner bg-success"><span class="farm_harvest"></span> L</div>
+			</div>
+		</section>
+	</div>
+	<script src="./js/main.js"></script>
 </body>
 </html>
