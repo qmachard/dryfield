@@ -80,3 +80,8 @@ node_modules
 ### BOWER
 
 bower_components/
+
+### WEBPACK
+
+/public/js/main.js
+/public/js/main.js.map
