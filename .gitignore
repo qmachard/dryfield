@@ -79,7 +79,7 @@ node_modules
 
 ### BOWER
 
-bower_components/
+/public/components/
 
 ### WEBPACK
 
