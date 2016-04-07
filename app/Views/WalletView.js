@@ -7,6 +7,8 @@ export default class WalletView {
 
 		this.walletDiv = document.getElementById('wallet');
 
+		this.walletAmountDiv = this.walletDiv.querySelector('.amount');
+
 		this.init();
 		this.initEvents();
 	}
@@ -22,6 +24,6 @@ export default class WalletView {
 	}
 
 	updateAmount() {
-		this.walletDiv.innerHTML = this.wallet.amount;
+		this.walletAmountDiv.innerHTML = this.wallet.amount;
 	}
 }

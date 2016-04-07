@@ -1,8 +1,16 @@
-export default class TankView {
+import EventEmitter from '../Core/EventEmitter.js';
+
+export default class TankView extends EventEmitter {
 	constructor(tank) {
+		super();
+
 		this.tank = tank;
 
 		this.tankDiv = document.getElementById('tank');
+
+		this.quantityDiv = this.tankDiv.querySelector('.quantity');
+		this.sizeDiv = this.tankDiv.querySelector('.size');
+		this.buyBtn = this.tankDiv.querySelector('.btn-buy');
 
 		this.init();
 		this.initEvents();
@@ -10,15 +18,24 @@ export default class TankView {
 
 	init() {
 		this.updateQuantity();
+		this.updateSize();
 	}
 
 	initEvents() {
 		this.tank.on('update', () => {
 			this.updateQuantity();
 		});
+
+		this.buyBtn.addEventListener('click', ()=>{
+			this.emit('buy');
+		}, false);
+	}
+
+	updateSize() {
+		this.sizeDiv.innerHTML = this.tank.size;
 	}
 
 	updateQuantity() {
-		this.tankDiv.innerHTML = this.tank.quantity;
+		this.quantityDiv.innerHTML = this.tank.quantity;
 	}
 }

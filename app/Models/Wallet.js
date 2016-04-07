@@ -16,7 +16,7 @@ export default class Wallet extends EventEmitter {
 	 * @returns {boolean}
 	 */
 	pay(amount) {
-		if(this.amount >= amount) {
+		if(this.canPay(amount)) {
 			this.amount -= amount;
 
 			this.emit('pay', true);
@@ -37,5 +37,14 @@ export default class Wallet extends EventEmitter {
 		this.amount += amount;
 
 		this.emit('update');
+	}
+
+	/**
+	 *
+	 * @param amount
+	 * @returns {boolean}
+	 */
+	canPay(amount) {
+		return this.amount >= amount;
 	}
 }
