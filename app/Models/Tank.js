@@ -1,11 +1,17 @@
 import EventEmitter from '../Core/EventEmitter.js';
 
 export default class Tank extends EventEmitter {
-	constructor(initialQuantity, size) {
+	constructor(config) {
 		super();
 
-		this.quantity = initialQuantity;
-		this.size = size || 10;
+		this.config = Object.assign({
+			initialQuantity: 3,
+			size: 10,
+			waterPrice: 1
+		}, config);
+
+		this.quantity = this.config.initialQuantity;
+		this.size = this.config.size;
 	}
 
 	getWater(quantity, canDeliverLess) {

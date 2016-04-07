@@ -4,10 +4,14 @@
 import EventEmitter from '../Core/EventEmitter.js';
 
 export default class Wallet extends EventEmitter {
-	constructor(initialAmount) {
+	constructor(config) {
 		super();
 
-		this.amount = initialAmount;
+		this.config = Object.assign({
+			initialAmount: 50
+		}, config);
+
+		this.amount = this.config.initialAmount;
 	}
 
 	/**

@@ -2,22 +2,23 @@ import EventEmitter from '../Core/EventEmitter.js';
 import Tank from './Tank.js';
 
 export default class Field extends EventEmitter {
-	constructor() {
+	constructor(config) {
 		super();
 
-		this.config = {
-			harvestMaturity: 100,
-			harvestIncrement: 10,
-			waterDecrement: .4
-		};
+		this.config = Object.assign({
+			waterConsumption: 1,
+			harvestIncrement: 5,
+			harvestPrice: 10,
+			harvestMaturity: 100
+		}, config);
 
 		this.harvestLevel = 0;
-		this.tank = new Tank(3, 3);
+		this.tank = new Tank(this.config.tank);
 	}
 
 	grow() {
-		if(this.tank.hasWater(this.config.waterDecrement) && this.harvestLevel < this.config.harvestMaturity) {
-			this.tank.getWater(this.config.waterDecrement);
+		if(this.tank.hasWater(this.config.waterConsumption) && this.harvestLevel < this.config.harvestMaturity) {
+			this.tank.getWater(this.config.waterConsumption);
 			this.harvestLevel = Math.roundDecimal(this.harvestLevel + this.config.harvestIncrement, 2);
 
 			this.emit('grow');
