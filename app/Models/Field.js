@@ -17,22 +17,25 @@ export default class Field extends EventEmitter {
 	}
 
 	grow() {
-		if(this.tank.hasWater(this.config.waterConsumption) && this.harvestLevel < this.config.harvestMaturity) {
-			this.tank.getWater(this.config.waterConsumption);
-			this.harvestLevel = Math.roundDecimal(this.harvestLevel + this.config.harvestIncrement, 2);
+		if(this.harvestLevel < this.config.harvestMaturity) {
+			if(this.tank.hasWater(this.config.waterConsumption)) {
+				this.tank.getWater(this.config.waterConsumption);
+				this.harvestLevel = Math.roundDecimal(this.harvestLevel + this.config.harvestIncrement, 2);
 
-			this.emit('grow');
-			this.emit('update');
+				this.emit('grow');
+				this.emit('update');
 
-			this.checkMaturity();
+				this.checkMaturity();
+			} else {
+				this.reset();
+			}
 		}
 	}
 
 	harvest() {
 		if(this.checkMaturity()) {
-			this.harvestLevel = 0;
-			this.emit('reset');
-			this.emit('update');
+			this.reset();
+
 			return 40;
 		}
 		return 0;
@@ -44,5 +47,11 @@ export default class Field extends EventEmitter {
 			return true;
 		}
 		return false;
+	}
+
+	reset() {
+		this.harvestLevel = 0;
+		this.emit('reset');
+		this.emit('update');
 	}
 }
