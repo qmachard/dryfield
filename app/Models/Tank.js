@@ -8,9 +8,15 @@ export default class Tank extends EventEmitter {
 		this.size = size || 10;
 	}
 
-	deliver(quantity) {
+	getWater(quantity, canDeliverLess) {
 		if(this.quantity < quantity) {
-			quantity = this.quantity;
+			quantity = 0;
+
+			if(canDeliverLess) {
+				quantity = this.quantity;
+			}
+
+			this.emit('nowater');
 		}
 
 		this.quantity = Math.roundDecimal(this.quantity - quantity, 2);
@@ -22,7 +28,7 @@ export default class Tank extends EventEmitter {
 		return quantity;
 	}
 
-	takeDelivery(quantity) {
+	addWater(quantity) {
 		if(this.quantity + quantity > this.size) {
 			quantity = this.size - this.quantity;
 		}
@@ -34,5 +40,18 @@ export default class Tank extends EventEmitter {
 		this.emit('update');
 
 		return quantity;
+	}
+
+	addWaterFrom(tank) {
+		var lack = this.size - this.quantity;
+
+		if(lack > 0) {
+			var water = tank.getWater(lack, true);
+			this.addWater(water);
+		}
+	}
+
+	hasWater(quantity) {
+		return this.quantity >= quantity;
 	}
 }
