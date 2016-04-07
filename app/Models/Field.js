@@ -6,9 +6,9 @@ export default class Field extends EventEmitter {
 		super();
 
 		this.config = {
-			harvestMaturity: 10,
-			harvestIncrement: 1,
-			waterDecrement: 1
+			harvestMaturity: 100,
+			harvestIncrement: 10,
+			waterDecrement: .4
 		};
 
 		this.harvestLevel = 0;
