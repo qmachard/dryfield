@@ -32,6 +32,7 @@ export default class Field extends EventEmitter {
 		if(this.checkMaturity()) {
 			this.harvestLevel = 0;
 			this.emit('reset');
+			this.emit('update');
 			return 40;
 		}
 		return 0;
