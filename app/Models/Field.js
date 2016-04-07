@@ -16,7 +16,8 @@ export default class Field extends EventEmitter {
 	}
 
 	grow() {
-		if(this.tank.getWater(this.config.waterDecrement) && this.harvestLevel < this.config.harvestMaturity) {
+		if(this.tank.hasWater(this.config.waterDecrement) && this.harvestLevel < this.config.harvestMaturity) {
+			this.tank.getWater(this.config.waterDecrement);
 			this.harvestLevel = Math.roundDecimal(this.harvestLevel + this.config.harvestIncrement, 2);
 
 			this.emit('grow');
