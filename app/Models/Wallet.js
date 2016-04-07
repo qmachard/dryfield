@@ -1,8 +1,12 @@
 /**
  * Created by quentinmachard on 06/04/2016.
  */
-export default class Wallet {
+import EventEmitter from '../Core/EventEmitter.js';
+
+export default class Wallet extends EventEmitter {
 	constructor(initialAmount) {
+		super();
+
 		this.amount = initialAmount;
 	}
 
@@ -14,8 +18,12 @@ export default class Wallet {
 	pay(amount) {
 		if(this.amount >= amount) {
 			this.amount -= amount;
+
+			this.emit('pay', true);
 			return true;
 		}
+
+		this.emit('pay', false);
 		return false;
 	}
 

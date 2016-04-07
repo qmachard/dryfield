@@ -7,10 +7,21 @@ export default class WalletView {
 
 		this.walletDiv = document.getElementById('wallet');
 
-		this.update();
+		this.init();
+		this.initEvents();
 	}
 
-	update() {
+	init() {
+		this.updateAmount();
+	}
+
+	initEvents() {
+		this.wallet.on('pay', (data) => {
+			this.updateAmount();
+		});
+	}
+
+	updateAmount() {
 		this.walletDiv.innerHTML = this.wallet.amount;
 	}
 }
