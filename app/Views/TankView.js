@@ -26,7 +26,7 @@ export default class TankView extends EventEmitter {
 			this.updateQuantity();
 		});
 
-		this.buyBtn.addEventListener('click', ()=>{
+		this.buyBtn.addEventListener('click', () => {
 			this.emit('buy');
 		}, false);
 	}
