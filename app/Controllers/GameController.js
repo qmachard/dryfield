@@ -75,7 +75,7 @@ export default class GameController {
 			let fieldView = new FieldView(field, 'field-' + i);
 
 			fieldView.on('irrigate', () => {
-				field.tank.addWaterFrom(tank);
+				field.tank.addWaterFrom(this.tank);
 			});
 
 			fieldView.on('harvest', () => {
