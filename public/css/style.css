@@ -1,13 +1,11 @@
 .fields {
 	display:block;
+	position: relative;
 }
 
 .field {
-	display: inline-block;
-	position: relative;
-	width: 200px;
-	height: 100px;
-	margin: 10px;
+	display:block;
+	margin: 10px 0 0 0;
 }
 
 .field_actions {
