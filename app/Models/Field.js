@@ -27,9 +27,18 @@ export default class Field extends EventEmitter {
 		}
 	}
 
+	harvest() {
+		if(this.checkMaturity()) {
+			this.harvestLevel = 0;
+			this.emit('reset');
+		}
+	}
+
 	checkMaturity() {
 		if(this.harvestLevel == this.config.harvestMaturity) {
-			this.emit('isMature')
+			this.emit('isMature');
+			return true;
 		}
+		return false;
 	}
 }

@@ -16,7 +16,7 @@ export default class WalletView {
 	}
 
 	initEvents() {
-		this.wallet.on('pay', (data) => {
+		this.wallet.on('update', () => {
 			this.updateAmount();
 		});
 	}
