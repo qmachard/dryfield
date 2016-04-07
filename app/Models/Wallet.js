@@ -20,10 +20,12 @@ export default class Wallet extends EventEmitter {
 			this.amount -= amount;
 
 			this.emit('pay', true);
+			this.emit('update');
 			return true;
 		}
 
 		this.emit('pay', false);
+
 		return false;
 	}
 
@@ -33,5 +35,7 @@ export default class Wallet extends EventEmitter {
 	 */
 	getPaid(amount) {
 		this.amount += amount;
+
+		this.emit('update');
 	}
 }
