@@ -1,11 +1,11 @@
 import EventEmitter from '../Core/EventEmitter.js';
 
 export default class Tank extends EventEmitter {
-	constructor(initialQuantity) {
-		this.quantity = initialQuantity;
-		this.size = 6;
+	constructor(initialQuantity, size) {
+		super();
 
-		this.init();
+		this.quantity = initialQuantity;
+		this.size = size || 10;
 	}
 
 	deliver(quantity) {
@@ -13,7 +13,7 @@ export default class Tank extends EventEmitter {
 			quantity = this.quantity;
 		}
 
-		this.quantity -= quantity;
+		this.quantity = Math.roundDecimal(this.quantity - quantity, 2);
 
 		// Events
 		this.emit('deliver', quantity);
@@ -27,16 +27,12 @@ export default class Tank extends EventEmitter {
 			quantity = this.size - this.quantity;
 		}
 
-		this.quantity += quantity;
+		this.quantity = Math.roundDecimal(this.quantity + quantity, 2);
 
 		// Events
 		this.emit('takeDelivery', quantity);
 		this.emit('update');
 
 		return quantity;
-	}
-
-	init() {
-
 	}
 }
