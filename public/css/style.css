@@ -1,8 +1,8 @@
-.farms {
+.fields {
 	display:block;
 }
 
-.farm {
+.field {
 	display: inline-block;
 	position: relative;
 	width: 200px;
@@ -10,11 +10,11 @@
 	margin: 10px;
 }
 
-.farm_actions {
+.field_actions {
 	margin-bottom: 10px;
 }
 
-.farm_inner {
+.field_inner {
 	padding: 20px;
 	text-align: center;
 	font-size: 20px;
