@@ -19,7 +19,6 @@ export default class TankView {
 	}
 
 	updateQuantity() {
-		console.log(this.tank.quantity);
 		this.tankDiv.innerHTML = this.tank.quantity;
 	}
 }

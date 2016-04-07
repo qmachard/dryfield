@@ -21,6 +21,10 @@ export default class FieldView {
 			this.updateHarvest();
 			this.updateTank();
 		});
+
+		this.field.tank.on('update', () => {
+			this.updateTank();
+		});
 	}
 
 	updateHarvest() {
