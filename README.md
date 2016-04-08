@@ -45,3 +45,7 @@ https://moqups.com/simon_louvet/7gfaQ7OA/p:ab7fe3653
 L’achat d’eau ouvre une popin met en pause le jeux.
 
 La couleur du bouton récolter change de couleur quand le champ est mur. Une fenêtre s’ouvre à la fin du jeux pour saisir le nom du joueur.
+
+## Démo
+
+http://qmachard.github.io/dryfield/
