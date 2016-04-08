@@ -36,7 +36,7 @@ export default class Field extends EventEmitter {
 		if(this.checkMaturity()) {
 			this.reset();
 
-			return 40;
+			return this.config.harvestPrice;
 		}
 		return 0;
 	}

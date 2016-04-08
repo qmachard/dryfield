@@ -78,7 +78,6 @@ export default class GameController {
 			field.config.waterConsumption += .5;
 			field.config.harvestPrice += 5;
 		}
-		console.log('nextLevel');
 	}
 
 	initFields(nbFields) {
