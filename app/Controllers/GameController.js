@@ -52,9 +52,25 @@ export default class GameController {
 
 	init() {
 		this.tankView.on('buy', () => {
-			if(this.wallet.canPay(this.config.tank.waterPrice) && this.tank.canAddWater(this.config.tank.waterGradient)) {
-				this.wallet.pay(this.config.tank.waterPrice);
-				this.tank.addWater(this.config.tank.waterGradient);
+			var lack = this.tank.getLack();
+			var quantity = this.config.tank.waterGradient;
+
+			if(lack < quantity) {
+				quantity = lack;
+			}
+
+			if(quantity > 0) {
+				var price = this.config.tank.waterPrice * quantity;
+
+				if(!this.wallet.canPay(price)) {
+					quantity = this.wallet.amount / this.config.tank.waterPrice;
+					price = this.wallet.amount;
+				}
+
+				if(quantity > 0) {
+					this.wallet.pay(price);
+					this.tank.addWater(quantity);
+				}
 			}
 		});
 

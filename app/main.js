@@ -10,7 +10,7 @@ var config = {
 	tank:{
 		initialQuantity: 10,
 		size: 40,
-		waterPrice: 10,
+		waterPrice: 1,
 		waterGradient: 10
 	},
 	field: {
