@@ -8,56 +8,89 @@
 </head>
 <body>
 	<div class="container">
-		<header>
-			<nav>
-				<ul>
-					<li><a href="#">Game</a></li>
-					<li><a href="#">Score</a></li>
-				</ul>
-			</nav>
-		</header>
-		<section id="sectionScore">
-			<ul>
-				<li id="score"><span class="value number">0</span>&nbsp;récoltes</li>
-				<li id="tank"><span class="quantity number">0</span>&nbsp;/&nbsp;<span class="size number">0</span>&nbsp;L <button class="btn btn-buy">Buy</button></li>
-				<li id="wallet"><span class="amount number">0</span>&nbsp;$</li>
-			</ul>
-		</section>
-		<section class="fields" id="sectionGame">
-			<div class="field" id="field-0">
-				<div class="field_actions">
-					<button class="btn btn-irrigate btn-default"><i class="glyphicon glyphicon-tint"></i></button>
-					<button class="btn btn-harvest btn-success" disabled><i class="glyphicon glyphicon-leaf"></i></button>
+		<div class="jumbotron">
+			<h1>Dry Field</h1>
+			<p>Farm simulation game</p>
+		</div>
+		<div class="container">
+			<section class="row">
+				<div class="col col-md-4">
+					<div class="square" id="score">
+						<div class="square_content">
+							<div class="square_inner">
+								<span class="value number">0</span><br>
+								<span class="label"><i class="glyphicon glyphicon-leaf"></i></span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="field_inner bg-success">
-					<div><span class="harvest number">0</span> %</div>
-					<div><span class="quantity number">0</span> L</div>
+				<div class="col col-md-4">
+					<div class="square square--water tank" id="tank">
+						<div class="square_content">
+							<div class="square_inner">
+								<span class="quantity number">0</span> / <span class="size">0</span><br>
+								<span class="label"><i class="glyphicon glyphicon-tint"></i></span>
+							</div>
+						</div>
+						<div class="square_progress"></div>
+						<button class="square_button btn-buy"></button>
+					</div>
 				</div>
-			</div>
-
-			<div class="field" id="field-1">
-				<div class="field_actions">
-					<button class="btn btn-irrigate btn-default"><i class="glyphicon glyphicon-tint"></i></button>
-					<button class="btn btn-harvest btn-success" disabled><i class="glyphicon glyphicon-leaf"></i></button>
+				<div class="col col-md-4">
+					<div class="square square--wallet" id="wallet">
+						<div class="square_content">
+							<div class="square_inner">
+								<span class="amount number">0</span><br>
+								<span class="label"><i class="glyphicon glyphicon-usd"></i></span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="field_inner bg-success">
-					<div><span class="harvest number">0</span> %</div>
-					<div><span class="quantity number">0</span> L</div>
+			</section>
+			<section class="fields" id="sectionGame">
+				<h2>My fields</h2>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="field" id="field-0">
+							<button class="field-button field-button--water btn-irrigate">
+								<span class="field-button_content"><i class="glyphicon glyphicon-tint"></i></span>
+								<span class="field-button_progress"></span>
+							</button>
+							<button class="field-button field-button--harvest btn-harvest">
+								<span class="field-button_content"><i class="glyphicon glyphicon-leaf"></i></span>
+								<span class="field-button_progress"></span>
+							</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="field" id="field-1">
+							<button class="field-button field-button--water btn-irrigate">
+								<span class="field-button_content"><i class="glyphicon glyphicon-tint"></i></span>
+								<span class="field-button_progress"></span>
+							</button>
+							<button class="field-button field-button--harvest btn-harvest">
+								<span class="field-button_content"><i class="glyphicon glyphicon-leaf"></i></span>
+								<span class="field-button_progress"></span>
+							</button>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="field" id="field-2">
+							<button class="field-button field-button--water btn-irrigate">
+								<span class="field-button_content"><i class="glyphicon glyphicon-tint"></i></span>
+								<span class="field-button_progress"></span>
+							</button>
+							<button class="field-button field-button--harvest btn-harvest">
+								<span class="field-button_content"><i class="glyphicon glyphicon-leaf"></i></span>
+								<span class="field-button_progress"></span>
+							</button>
+						</div>
+					</div>
 				</div>
-			</div>
-
-			<div class="field" id="field-2">
-				<div class="field_actions">
-					<button class="btn btn-irrigate btn-default"><i class="glyphicon glyphicon-tint"></i></button>
-					<button class="btn btn-harvest btn-success" disabled><i class="glyphicon glyphicon-leaf"></i></button>
-				</div>
-				<div class="field_inner bg-success">
-					<div><span class="harvest number">0</span> %</div>
-					<div><span class="quantity number">0</span> L</div>
-				</div>
-			</div>
-		</section>
+			</section>
+		</div>
 	</div>
+
 	<script src="./js/main.js"></script>
 </body>
 </html>

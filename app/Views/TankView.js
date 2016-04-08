@@ -36,6 +36,7 @@ export default class TankView extends EventEmitter {
 	}
 
 	updateQuantity() {
+		this.tankDiv.querySelector('.square_progress').style.height = this.tank.quantity / this.tank.size * 100 + '%';
 		this.quantityDiv.innerHTML = this.tank.quantity;
 	}
 }

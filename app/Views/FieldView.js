@@ -8,8 +8,8 @@ export default class FieldView extends EventEmitter {
 
 		this.fieldDiv = document.getElementById(id);
 
-		this.harvestDiv = this.fieldDiv.querySelector('.harvest');
-		this.tankDiv = this.fieldDiv.querySelector('.quantity');
+		//this.harvestDiv = this.fieldDiv.querySelector('.harvest');
+		//this.tankDiv = this.fieldDiv.querySelector('.quantity');
 
 		this.harvestButton = this.fieldDiv.querySelector('.btn-harvest');
 		this.irrigateButton = this.fieldDiv.querySelector('.btn-irrigate');
@@ -51,10 +51,10 @@ export default class FieldView extends EventEmitter {
 	}
 
 	updateHarvest() {
-		this.harvestDiv.innerHTML = this.field.harvestLevel;
+		this.harvestButton.querySelector('.field-button_progress').style.height = this.field.harvestLevel / this.field.config.harvestMaturity * 100 + '%';
 	}
 
 	updateTank() {
-		this.tankDiv.innerHTML = this.field.tank.quantity;
+		this.irrigateButton.querySelector('.field-button_progress').style.height = this.field.tank.quantity / this.field.tank.size * 100 + '%';
 	}
 }

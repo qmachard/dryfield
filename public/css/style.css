@@ -1,6 +1,98 @@
+.square {
+	display:block;
+	position: relative;
+	height:150px;
+	width:150px;
+	background:#148544;
+	color:#FFFFFF;
+	margin:auto;
+}
+
+.square--water {
+	background:#0e8f96;
+
+}
+
+.square--wallet {
+	background: #66512c;
+}
+
+.square_content {
+	position: relative;
+	display:table;
+	width:100%;
+	height:100%;
+	z-index:2;
+}
+
+.square_inner {
+	display:table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 18px;
+	width:100%;
+	height:100%;
+	border:none;
+	background: transparent;
+}
+
+.square_button {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background:none;
+	border:none;
+	width:100%;
+	height:100%;
+	z-index:3;
+}
+
+.square_progress {
+	position: absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:10%;
+	background: #22b465;
+	z-index:1;
+}
+
+.square--water .square_progress {
+	background: #0ecfd6;
+}
+
+.square .number {
+	font-size: 24px;
+}
+.square .label {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.tank .square_button:hover:before {
+	content:"\e148  \e092  \e064";
+	display:block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background:rgba(0,0,0,0.5);
+	line-height: 150px;
+	text-align: center;
+	z-index:3;
+
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .fields {
 	display:block;
 	position: relative;
+	margin-top:20px;
 }
 
 .field {
@@ -21,4 +113,40 @@
 .number {
 	font-family: monospace;
 	font-weight: bold;
+}
+
+.field-button {
+	position: relative;
+	display: inline-block;
+	padding: 0 60px;
+	outline: none;
+	border: none;
+	background: #148544;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 1em;
+	line-height: 4;
+}
+
+.field-button.field-button--water {
+	background: #0e8f96;
+}
+
+.field-button .field-button_content {
+	position: relative;
+	z-index:2;
+}
+.field-button .field-button_progress {
+	position: absolute;
+	bottom:0;
+	left:0;
+	right:0;
+	height:0;
+	background: #22b465;
+	z-index:1;
+}
+
+.field-button.field-button--water .field-button_progress {
+	background: #0ecfd6;
 }
