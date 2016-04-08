@@ -49,7 +49,7 @@ export default class Tank extends EventEmitter {
 	}
 
 	addWaterFrom(tank) {
-		var lack = this.size - this.quantity;
+		var lack = this.getLack();
 
 		if(lack > 0) {
 			var water = tank.getWater(lack, true);
@@ -63,5 +63,9 @@ export default class Tank extends EventEmitter {
 
 	hasWater(quantity) {
 		return this.quantity >= quantity;
+	}
+
+	getLack() {
+		return this.size - this.quantity;
 	}
 }
