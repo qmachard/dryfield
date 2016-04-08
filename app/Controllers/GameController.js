@@ -58,6 +58,10 @@ export default class GameController {
 			}
 		});
 
+		this.score.on('nextLevel', () => {
+			this.nextLevel();
+		});
+
 		this.initFields(this.config.nbFields);
 
 		this.frames = setInterval(() => { this.frame() }, 1000);
@@ -67,6 +71,14 @@ export default class GameController {
 		for(var i=0, field; field = this.fields[i]; i++) {
 			field.grow();
 		}
+	}
+
+	nextLevel() {
+		for(var i=0, field; field = this.fields[i]; i++) {
+			field.config.waterConsumption += .5;
+			field.config.harvestPrice += 5;
+		}
+		console.log('nextLevel');
 	}
 
 	initFields(nbFields) {
