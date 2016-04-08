@@ -11,7 +11,7 @@ export default class Score extends EventEmitter {
 	increment() {
 		this.score += 1;
 
-		if(this.score % 5) {
+		if(this.score % 5 == 0) {
 			this.level++;
 			this.emit('nextLevel');
 		}
