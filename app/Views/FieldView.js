@@ -8,9 +8,6 @@ export default class FieldView extends EventEmitter {
 
 		this.fieldDiv = document.getElementById(id);
 
-		//this.harvestDiv = this.fieldDiv.querySelector('.harvest');
-		//this.tankDiv = this.fieldDiv.querySelector('.quantity');
-
 		this.harvestButton = this.fieldDiv.querySelector('.btn-harvest');
 		this.irrigateButton = this.fieldDiv.querySelector('.btn-irrigate');
 

@@ -10,7 +10,6 @@
 
 .square--water {
 	background:#0e8f96;
-
 }
 
 .square--wallet {
@@ -45,6 +44,7 @@
 	width:100%;
 	height:100%;
 	z-index:3;
+	outline: none;
 }
 
 .square_progress {
@@ -55,6 +55,9 @@
 	height:10%;
 	background: #22b465;
 	z-index:1;
+
+	-webkit-transition: all .2s;
+	transition:         all .2s;
 }
 
 .square--water .square_progress {
@@ -145,6 +148,9 @@
 	height:0;
 	background: #22b465;
 	z-index:1;
+
+	-webkit-transition: all .2s;
+	transition:         all .2s;
 }
 
 .field-button.field-button--water .field-button_progress {
