@@ -3,6 +3,10 @@
 	margin-bottom:100px;
 }
 
+.jumbotron {
+	margin-top:50px;
+}
+
 .square {
 	display:block;
 	position: relative;
