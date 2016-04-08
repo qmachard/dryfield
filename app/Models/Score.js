@@ -5,10 +5,16 @@ export default class Score extends EventEmitter {
 		super();
 
 		this.score = 0;
+		this.level = 1;
 	}
 
 	increment() {
 		this.score += 1;
+
+		if(this.score % 5) {
+			this.level++;
+			this.emit('nextLevel');
+		}
 
 		this.emit('update');
 	}
