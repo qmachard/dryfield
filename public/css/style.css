@@ -6,6 +6,8 @@
 	background:#148544;
 	color:#FFFFFF;
 	margin:auto;
+	border-radius: 40px;
+	overflow: hidden;
 }
 
 .square--water {

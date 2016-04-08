@@ -8,10 +8,10 @@ var config = {
 		initialAmount: 50
 	},
 	tank:{
-		initialQuantity: 3,
-		size: 6,
-		waterPrice: 1,
-		waterGradient: 1
+		initialQuantity: 10,
+		size: 40,
+		waterPrice: 10,
+		waterGradient: 10
 	},
 	field: {
 		waterConsumption: 1,
@@ -19,7 +19,7 @@ var config = {
 		harvestPrice: 40,
 		tank: {
 			initialQuantity: 3,
-			size: 3
+			size: 10
 		}
 	}
 };
